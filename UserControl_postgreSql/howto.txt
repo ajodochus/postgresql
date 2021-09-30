@@ -1,0 +1,4 @@
+﻿postgreSql:
+
+
+Nuget npgsql installieren
