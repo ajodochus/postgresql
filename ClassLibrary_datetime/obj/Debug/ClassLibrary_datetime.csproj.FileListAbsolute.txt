@@ -1,0 +1,6 @@
+D:\projects\playground\ClassLibrary_datetime\bin\Debug\ClassLibrary_datetime.dll
+D:\projects\playground\ClassLibrary_datetime\bin\Debug\ClassLibrary_datetime.pdb
+D:\projects\playground\ClassLibrary_datetime\obj\Debug\ClassLibrary_datetime.Usercontrol_datetime.resources
+D:\projects\playground\ClassLibrary_datetime\obj\Debug\ClassLibrary_datetime.csproj.GenerateResource.cache
+D:\projects\playground\ClassLibrary_datetime\obj\Debug\ClassLibrary_datetime.dll
+D:\projects\playground\ClassLibrary_datetime\obj\Debug\ClassLibrary_datetime.pdb

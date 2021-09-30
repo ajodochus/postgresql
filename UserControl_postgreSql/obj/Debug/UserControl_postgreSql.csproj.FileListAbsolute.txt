@@ -1,0 +1,14 @@
+D:\projects\playground\UserControl_postgreSql\bin\Debug\UserControl_postgreSql.dll
+D:\projects\playground\UserControl_postgreSql\bin\Debug\UserControl_postgreSql.pdb
+D:\projects\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.csprojAssemblyReference.cache
+D:\projects\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.dll
+D:\projects\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.pdb
+D:\projects\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.Uc_postgreSql.resources
+D:\projects\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.csproj.GenerateResource.cache
+D:\playground\UserControl_postgreSql\bin\Debug\UserControl_postgreSql.dll
+D:\playground\UserControl_postgreSql\bin\Debug\UserControl_postgreSql.pdb
+D:\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.csprojAssemblyReference.cache
+D:\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.Uc_postgreSql.resources
+D:\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.csproj.GenerateResource.cache
+D:\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.dll
+D:\playground\UserControl_postgreSql\obj\Debug\UserControl_postgreSql.pdb
