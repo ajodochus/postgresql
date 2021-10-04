@@ -1,0 +1,138 @@
+2021-10-01 15:08:51.878 CEST [9704] LOG:  PostgreSQL 13.4, compiled by Visual C++ build 1914, 64-bit startet
+2021-10-01 15:08:51.937 CEST [9704] LOG:  erwarte Verbindungen auf IPv6-Adresse »::1«, Port 5439
+2021-10-01 15:08:51.937 CEST [9704] LOG:  erwarte Verbindungen auf IPv4-Adresse »127.0.0.1«, Port 5439
+2021-10-01 15:08:52.055 CEST [10900] LOG:  Datenbanksystem wurde am 2021-10-01 15:08:43 CEST heruntergefahren
+2021-10-01 15:08:52.097 CEST [9704] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-01 15:13:48.024 CEST [9704] LOG:  Serverprozess (PID 9264) wurde durch Ausnahme 0xC000013A beendet
+2021-10-01 15:13:48.024 CEST [9704] DETAIL:  Der fehlgeschlagene Prozess führte aus: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442)) AS "Commits",
+	   (SE
+2021-10-01 15:13:48.024 CEST [9704] TIPP:  Sehen Sie die Beschreibung des Hexadezimalwerts in der C-Include-Datei »ntstatus.h« nach.
+2021-10-01 15:13:48.029 CEST [9704] LOG:  aktive Serverprozesse werden abgebrochen
+2021-10-01 15:13:48.298 CEST [2204] FATAL:  Verbindung wird abgebrochen wegen unerwartetem Ende des Postmasters
+2021-10-01 15:23:31.725 CEST [4388] LOG:  PostgreSQL 13.4, compiled by Visual C++ build 1914, 64-bit startet
+2021-10-01 15:23:31.827 CEST [4388] LOG:  erwarte Verbindungen auf IPv6-Adresse »::1«, Port 5439
+2021-10-01 15:23:31.828 CEST [4388] LOG:  erwarte Verbindungen auf IPv4-Adresse »127.0.0.1«, Port 5439
+2021-10-01 15:23:32.640 CEST [9648] LOG:  Datenbanksystem wurde unterbrochen; letzte bekannte Aktion am 2021-10-01 15:08:52 CEST
+2021-10-01 15:23:32.842 CEST [5688] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:32.983 CEST [4028] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:33.035 CEST [5284] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:33.085 CEST [7656] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:33.212 CEST [7924] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:33.366 CEST [9188] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:33.462 CEST [6988] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:33.492 CEST [10332] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:33.535 CEST [9648] LOG:  Datenbanksystem wurde nicht richtig heruntergefahren; automatische Wiederherstellung läuft
+2021-10-01 15:23:33.541 CEST [9648] LOG:  Redo beginnt bei 0/15CE918
+2021-10-01 15:23:33.541 CEST [9648] LOG:  ungültige Datensatzlänge bei 0/15CE950: 24 erwartet, 0 erhalten
+2021-10-01 15:23:33.541 CEST [9648] LOG:  Redo fertig bei 0/15CE918
+2021-10-01 15:23:33.612 CEST [10800] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:33.694 CEST [4388] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-01 15:23:33.761 CEST [4148] FATAL:  das Datenbanksystem startet
+2021-10-01 15:23:38.018 CEST [4388] LOG:  schnelles Herunterfahren verlangt
+2021-10-01 15:23:38.020 CEST [4388] LOG:  etwaige aktive Transaktionen werden abgebrochen
+2021-10-01 15:23:38.070 CEST [5712] FATAL:  Verbindung wird abgebrochen aufgrund von Anweisung des Administrators
+2021-10-01 15:23:38.121 CEST [4388] LOG:  Background-Worker »logical replication launcher« (PID 8884) beendete mit Status 1
+2021-10-01 15:23:38.123 CEST [7372] LOG:  fahre herunter
+2021-10-01 15:23:38.474 CEST [10656] FATAL:  das Datenbanksystem fährt herunter
+2021-10-01 15:23:38.500 CEST [2700] FATAL:  das Datenbanksystem fährt herunter
+2021-10-01 15:23:38.550 CEST [4388] LOG:  Datenbanksystem ist heruntergefahren
+2021-10-01 15:25:39.841 CEST [10156] LOG:  PostgreSQL 13.4, compiled by Visual C++ build 1914, 64-bit startet
+2021-10-01 15:25:39.911 CEST [10156] LOG:  erwarte Verbindungen auf IPv6-Adresse »::1«, Port 5439
+2021-10-01 15:25:39.911 CEST [10156] LOG:  erwarte Verbindungen auf IPv4-Adresse »127.0.0.1«, Port 5439
+2021-10-01 15:25:40.588 CEST [10420] FATAL:  das Datenbanksystem startet
+2021-10-01 15:25:40.628 CEST [7012] FATAL:  das Datenbanksystem startet
+2021-10-01 15:25:40.669 CEST [4204] LOG:  Datenbanksystem wurde am 2021-10-01 15:23:38 CEST heruntergefahren
+2021-10-01 15:25:40.892 CEST [10156] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-01 15:25:40.899 CEST [4568] FATAL:  das Datenbanksystem startet
+2021-10-01 15:25:46.928 CEST [10156] LOG:  schnelles Herunterfahren verlangt
+2021-10-01 15:25:46.933 CEST [10156] LOG:  etwaige aktive Transaktionen werden abgebrochen
+2021-10-01 15:25:46.981 CEST [10256] FATAL:  Verbindung wird abgebrochen aufgrund von Anweisung des Administrators
+2021-10-01 15:25:47.156 CEST [10156] LOG:  Background-Worker »logical replication launcher« (PID 9860) beendete mit Status 1
+2021-10-01 15:25:47.185 CEST [3996] LOG:  fahre herunter
+2021-10-01 15:25:47.610 CEST [10620] FATAL:  das Datenbanksystem fährt herunter
+2021-10-01 15:25:47.683 CEST [4284] FATAL:  das Datenbanksystem fährt herunter
+2021-10-01 15:25:47.716 CEST [10156] LOG:  Datenbanksystem ist heruntergefahren
+2021-10-01 15:26:54.254 CEST [8392] LOG:  PostgreSQL 13.4, compiled by Visual C++ build 1914, 64-bit startet
+2021-10-01 15:26:54.365 CEST [8392] LOG:  erwarte Verbindungen auf IPv6-Adresse »::1«, Port 5439
+2021-10-01 15:26:54.366 CEST [8392] LOG:  erwarte Verbindungen auf IPv4-Adresse »127.0.0.1«, Port 5439
+2021-10-01 15:26:54.791 CEST [3028] LOG:  Datenbanksystem wurde am 2021-10-01 15:25:47 CEST heruntergefahren
+2021-10-01 15:26:54.795 CEST [9936] FATAL:  das Datenbanksystem startet
+2021-10-01 15:26:54.927 CEST [8664] FATAL:  das Datenbanksystem startet
+2021-10-01 15:26:54.989 CEST [8392] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-01 15:27:05.746 CEST [10456] FATAL:  Rolle »meier« existiert nicht
+2021-10-01 15:39:41.571 CEST [8664] FEHLER:  Spalte »Meier« existiert nicht bei Zeichen 58
+2021-10-01 15:39:41.571 CEST [8664] ANWEISUNG:  INSERT INTO public.mytable(
+		"ID", "NAME")
+		VALUES (345, "Meier");
+2021-10-01 15:39:59.351 CEST [8664] FEHLER:  Spalte »meier« existiert nicht bei Zeichen 58
+2021-10-01 15:39:59.351 CEST [8664] ANWEISUNG:  INSERT INTO public.mytable(
+		"ID", "NAME")
+		VALUES (345, Meier);
+2021-10-01 16:18:20.327 CEST [1552] FATAL:  Rolle »Administrator« existiert nicht
+2021-10-01 16:28:21.204 CEST [9388] FATAL:  Rolle »Administrator« existiert nicht
+2021-10-04 09:30:59.471 CEST [8392] LOG:  Serverprozess (PID 8664) wurde durch Ausnahme 0xC000013A beendet
+2021-10-04 09:30:59.471 CEST [8392] DETAIL:  Der fehlgeschlagene Prozess führte aus: INSERT INTO public.mytable(
+		"ID", "NAME")
+		VALUES (444, 'Schmitt');
+2021-10-04 09:30:59.471 CEST [8392] TIPP:  Sehen Sie die Beschreibung des Hexadezimalwerts in der C-Include-Datei »ntstatus.h« nach.
+2021-10-04 09:30:59.476 CEST [8392] LOG:  aktive Serverprozesse werden abgebrochen
+2021-10-04 09:30:59.520 CEST [3104] WARNUNG:  Verbindung wird abgebrochen wegen Absturz eines anderen Serverprozesses
+2021-10-04 09:30:59.520 CEST [3104] DETAIL:  Der Postmaster hat diesen Serverprozess angewiesen, die aktuelle Transaktion zurückzurollen und die Sitzung zu beenden, weil ein anderer Serverprozess abnormal beendet wurde und möglicherweise das Shared Memory verfälscht hat.
+2021-10-04 09:30:59.520 CEST [3104] TIPP:  In einem Moment sollten Sie wieder mit der Datenbank verbinden und Ihren Befehl wiederholen können.
+2021-10-04 09:30:59.528 CEST [11224] WARNUNG:  Verbindung wird abgebrochen wegen Absturz eines anderen Serverprozesses
+2021-10-04 09:30:59.528 CEST [11224] DETAIL:  Der Postmaster hat diesen Serverprozess angewiesen, die aktuelle Transaktion zurückzurollen und die Sitzung zu beenden, weil ein anderer Serverprozess abnormal beendet wurde und möglicherweise das Shared Memory verfälscht hat.
+2021-10-04 09:30:59.528 CEST [11224] TIPP:  In einem Moment sollten Sie wieder mit der Datenbank verbinden und Ihren Befehl wiederholen können.
+2021-10-04 09:30:59.578 CEST [9608] WARNUNG:  Verbindung wird abgebrochen wegen Absturz eines anderen Serverprozesses
+2021-10-04 09:30:59.578 CEST [9608] DETAIL:  Der Postmaster hat diesen Serverprozess angewiesen, die aktuelle Transaktion zurückzurollen und die Sitzung zu beenden, weil ein anderer Serverprozess abnormal beendet wurde und möglicherweise das Shared Memory verfälscht hat.
+2021-10-04 09:30:59.578 CEST [9608] TIPP:  In einem Moment sollten Sie wieder mit der Datenbank verbinden und Ihren Befehl wiederholen können.
+2021-10-04 09:30:59.877 CEST [8392] LOG:  alle Serverprozesse beendet; initialisiere neu
+2021-10-04 09:31:00.071 CEST [11580] LOG:  Datenbanksystem wurde unterbrochen; letzte bekannte Aktion am 2021-10-01 16:16:55 CEST
+2021-10-04 09:31:01.648 CEST [11580] LOG:  Datenbanksystem wurde nicht richtig heruntergefahren; automatische Wiederherstellung läuft
+2021-10-04 09:31:01.658 CEST [11580] LOG:  Redo beginnt bei 0/15E7448
+2021-10-04 09:31:01.658 CEST [11580] LOG:  ungültige Datensatzlänge bei 0/15E7530: 24 erwartet, 0 erhalten
+2021-10-04 09:31:01.658 CEST [11580] LOG:  Redo fertig bei 0/15E74F8
+2021-10-04 09:31:01.792 CEST [8392] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-04 09:31:05.399 CEST [8392] LOG:  Background-Worker »logical replication launcher« (PID 10004) wurde durch Ausnahme 0xC000013A beendet
+2021-10-04 09:31:05.399 CEST [8392] TIPP:  Sehen Sie die Beschreibung des Hexadezimalwerts in der C-Include-Datei »ntstatus.h« nach.
+2021-10-04 09:31:05.399 CEST [8392] LOG:  aktive Serverprozesse werden abgebrochen
+2021-10-04 09:31:05.406 CEST [11696] WARNUNG:  Verbindung wird abgebrochen wegen Absturz eines anderen Serverprozesses
+2021-10-04 09:31:05.406 CEST [11696] DETAIL:  Der Postmaster hat diesen Serverprozess angewiesen, die aktuelle Transaktion zurückzurollen und die Sitzung zu beenden, weil ein anderer Serverprozess abnormal beendet wurde und möglicherweise das Shared Memory verfälscht hat.
+2021-10-04 09:31:05.406 CEST [11696] TIPP:  In einem Moment sollten Sie wieder mit der Datenbank verbinden und Ihren Befehl wiederholen können.
+2021-10-04 09:31:05.427 CEST [8392] LOG:  Statistiksammelprozess (PID 432) wurde durch Ausnahme 0xC000013A beendet
+2021-10-04 09:31:05.427 CEST [8392] TIPP:  Sehen Sie die Beschreibung des Hexadezimalwerts in der C-Include-Datei »ntstatus.h« nach.
+2021-10-04 09:31:05.432 CEST [8392] LOG:  alle Serverprozesse beendet; initialisiere neu
+2021-10-04 09:31:05.521 CEST [4692] LOG:  Datenbanksystem wurde unterbrochen; letzte bekannte Aktion am 2021-10-04 09:31:01 CEST
+2021-10-04 09:31:06.092 CEST [4692] LOG:  Datenbanksystem wurde nicht richtig heruntergefahren; automatische Wiederherstellung läuft
+2021-10-04 09:31:06.095 CEST [4692] LOG:  ungültige Datensatzlänge bei 0/15E75A8: 24 erwartet, 0 erhalten
+2021-10-04 09:31:06.096 CEST [4692] LOG:  Redo nicht nötig
+2021-10-04 09:31:06.157 CEST [8392] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-04 09:35:26.271 CEST [8392] LOG:  Serverprozess (PID 9664) wurde durch Ausnahme 0xC000013A beendet
+2021-10-04 09:35:26.271 CEST [8392] DETAIL:  Der fehlgeschlagene Prozess führte aus: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 13442)) AS "Commits",
+	   (SE
+2021-10-04 09:35:26.271 CEST [8392] TIPP:  Sehen Sie die Beschreibung des Hexadezimalwerts in der C-Include-Datei »ntstatus.h« nach.
+2021-10-04 09:35:26.272 CEST [8392] LOG:  aktive Serverprozesse werden abgebrochen
+2021-10-04 09:35:26.764 CEST [10396] WARNUNG:  Verbindung wird abgebrochen wegen Absturz eines anderen Serverprozesses
+2021-10-04 09:35:26.764 CEST [10396] DETAIL:  Der Postmaster hat diesen Serverprozess angewiesen, die aktuelle Transaktion zurückzurollen und die Sitzung zu beenden, weil ein anderer Serverprozess abnormal beendet wurde und möglicherweise das Shared Memory verfälscht hat.
+2021-10-04 09:35:26.764 CEST [10396] TIPP:  In einem Moment sollten Sie wieder mit der Datenbank verbinden und Ihren Befehl wiederholen können.
