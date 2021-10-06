@@ -13,7 +13,7 @@ namespace Usercontrol_datetime
     public partial class Usercontrol_datetime : UserControl
     {
         DateTime today;
-
+        
         private static Usercontrol_datetime _instance;
         public static Usercontrol_datetime Instance
         {

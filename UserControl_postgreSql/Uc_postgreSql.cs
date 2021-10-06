@@ -7,7 +7,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 //using System.Threading.Tasks;
-using System.Windows.Forms;
 using Npgsql;
 using System.Diagnostics;
 using System.IO;
@@ -22,12 +21,9 @@ namespace UserControl_postgreSql
         static string project_name;
         static string suite_dir;
         static string sqlserverdir;
-        Dictionary<string, string> env_vars;
         public NpgsqlConnection conn;
-        ServiceController sc;
 
-        private StreamWriter _streamWriter;
-        private StreamReader _streamReader;
+
 
 
         public static Uc_postgreSql Instance
@@ -45,34 +41,16 @@ namespace UserControl_postgreSql
         {
             InitializeComponent();
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
-             project_name = this.GetType().Namespace;
-             suite_dir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-             sqlserverdir = Path.Combine(suite_dir, project_name, @"server\");
+            project_name = this.GetType().Namespace;
+            suite_dir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+            sqlserverdir = Path.Combine(suite_dir, project_name, @"server\");
 
         }
 
         public void start_sql_server()
         {
-
-            /*;
-              env_vars = new Dictionary<string, string>();
-              env_vars.Add("PATH", ";" + sqlserverdir + @"bin\");
-              env_vars.Add("PGDATA", sqlserverdir + @"data\");
-              env_vars.Add("PGDATABASE", "postgres");
-              env_vars.Add("PGUSER", "postgres");
-              env_vars.Add("PGPORT", "5439");
-              env_vars.Add("PGLOCALEDIR", sqlserverdir + @"share\locale\");
-
-              foreach (KeyValuePair<string, string> kvp in env_vars)
-              {
-                  var name = kvp.Key.ToString();
-                  var scope = EnvironmentVariableTarget.User; // or Machine
-                  var oldValue = Environment.GetEnvironmentVariable(name, scope);
-                  var newValue = oldValue + kvp.Value.ToString();
-                  Environment.SetEnvironmentVariable(name, newValue, scope);
-              }
-              */
-
+            pnl_service_status.BackColor = Color.White;
+            pnl_service_status.Refresh();
 
             Process p = new Process();
             ProcessStartInfo info = new ProcessStartInfo();
@@ -92,39 +70,32 @@ namespace UserControl_postgreSql
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                     sw.WriteLine("cd " + sqlserverdir);
-                     sw.WriteLine("@SET PATH=\""+sqlserverdir+"bin\";%PATH%");
-                     sw.WriteLine("@SET PGDATA="+sqlserverdir+"data");
-                     sw.WriteLine("@SET PGDATABASE=" + tb_database.Text);
-                     sw.WriteLine("@SET PGUSER=" + tb_user_id.Text);
-                     sw.WriteLine("@SET PGPORT=" + tb_port.Text);
-                     sw.WriteLine("@SET PGLOCALEDIR="+sqlserverdir+"share\\locale");
-                    
+                    sw.WriteLine("cd " + sqlserverdir);
+                    sw.WriteLine("@SET PATH=\"" + sqlserverdir + "bin\";%PATH%");
+                    sw.WriteLine("@SET PGDATA=" + sqlserverdir + "data");
+                    sw.WriteLine("@SET PGDATABASE=" + tb_database.Text);
+                    sw.WriteLine("@SET PGUSER=" + tb_user_id.Text);
+                    sw.WriteLine("@SET PGPORT=" + tb_port.Text);
+                    sw.WriteLine("@SET PGLOCALEDIR=" + sqlserverdir + "share\\locale");
+
                     if (!Directory.Exists(Path.Combine(sqlserverdir, "data")))
                     {
                         sw.WriteLine(sqlserverdir + @"\bin\initdb -U postgres -A trust");
                     }
-                    //sw.WriteLine(sqlserverdir + @"\bin\pg_ctl -D "+ sqlserverdir + @"\data\ -l logfile_postgresql start");
                     sw.WriteLine(sqlserverdir + @"\bin\pg_ctl -D " + sqlserverdir + @"\data\ -l logfile_postgresql -N postgres register");
 
-                    
-                    service_controller_toggle();
+                    servicePostgreStart();
 
-
-     
-                    
-
-                    string conStr = "Server="+tb_server.Text+"; Port="+tb_port.Text+"; User Id="+tb_user_id.Text+"; Database="+tb_database.Text+";";
-                    //string conStr = "Server=127.0.0.1; Port=" + tb_port.Text + "; User Id=" + tb_user_id.Text + "; Database=" + tb_database.Text + ";";
+                    string conStr = "Server=" + tb_server.Text + "; Port=" + tb_port.Text + "; User Id=" + tb_user_id.Text + "; Database=" + tb_database.Text + ";";
                     conn = new NpgsqlConnection(conStr);
 
                 }
             }
-            
+
         }
         public void stop_sql_server()
         {
-           
+
             Process p = new Process();
             ProcessStartInfo info = new ProcessStartInfo();
             info.FileName = "cmd.exe";
@@ -145,21 +116,20 @@ namespace UserControl_postgreSql
                     sw.WriteLine("@SET PGLOCALEDIR=" + sqlserverdir + "share\\locale");
                     sw.WriteLine(sqlserverdir + @"\bin\pg_ctl -D " + sqlserverdir + @"\data\ stop");
                 }
-            } 
-            
+            }
 
-            
-            
+
+
+
 
         }
 
 
-        public void service_controller_toggle()
+        public void servicePostgreStart()
         {
-            btn_start_service.Text = "wait ...";
             ServiceController sc = new ServiceController();
             sc.ServiceName = "postgres";
-
+            
 
             if (sc.Status == ServiceControllerStatus.Stopped)
             {
@@ -171,28 +141,39 @@ namespace UserControl_postgreSql
                     sc.WaitForStatus(ServiceControllerStatus.Running);
 
                     // Display the current service status.
-                    btn_start_service.Text = sc.Status.ToString();
-                    btn_start_service.BackColor = Color.Green;
+                    pnl_service_status.Text = sc.Status.ToString();
+                    pnl_service_status.BackColor = Color.Green;
                 }
                 catch (InvalidOperationException)
                 {
+                    //
                 }
             }
-            else if (sc.Status == ServiceControllerStatus.Running)
+
+        }
+
+        public void servicePostgreStop()
+        {
+            ServiceController sc = new ServiceController();
+            sc.ServiceName = "postgres";
+
+
+            if (sc.Status == ServiceControllerStatus.Running)
             {
+                // stop the service if the current status is running.
                 try
                 {
-                    // stop the service, and wait until its status is "Running".
+                    // Start the service, and wait until its status is "Running".
                     sc.Stop();
                     sc.WaitForStatus(ServiceControllerStatus.Stopped);
-                    btn_start_service.BackColor = Color.Red;
-                    btn_start_service.Text = "Start postgres service";
 
                     // Display the current service status.
+                    pnl_service_status.Text = sc.Status.ToString();
+                    pnl_service_status.BackColor = Color.Red;
                 }
                 catch (InvalidOperationException)
                 {
-                    btn_start_service.Text = "connectioned failed, see log";
+                    //
                 }
             }
         }
@@ -252,31 +233,33 @@ namespace UserControl_postgreSql
 
         private void start_sqlServer_Click(object sender, EventArgs e)
         {
-            btn_start_service.Text = "wait ...";
-
             start_sql_server();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //stop_sql_server();
-            service_controller_toggle();
+            servicePostgreStart();
         }
 
 
 
-         void OnProcessExit(object sender, EventArgs e)
+        void OnProcessExit(object sender, EventArgs e)
         {
             Console.WriteLine("I'm out of here");
 
-            //stop_sql_server();
-            service_controller_toggle();
+            servicePostgreStop();
 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             test_sql();
+        }
+
+        private void btn_stop_service_Click(object sender, EventArgs e)
+        {
+            servicePostgreStop();
         }
     }
 }

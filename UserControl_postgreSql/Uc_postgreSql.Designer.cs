@@ -44,6 +44,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_stop_service = new System.Windows.Forms.Button();
+            this.pnl_service_status = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.mydatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,12 +60,12 @@
             // 
             // btn_start_service
             // 
-            this.btn_start_service.BackColor = System.Drawing.Color.Red;
-            this.btn_start_service.Location = new System.Drawing.Point(34, 75);
+            this.btn_start_service.BackColor = System.Drawing.Color.Gray;
+            this.btn_start_service.Location = new System.Drawing.Point(34, 50);
             this.btn_start_service.Name = "btn_start_service";
             this.btn_start_service.Size = new System.Drawing.Size(134, 23);
             this.btn_start_service.TabIndex = 2;
-            this.btn_start_service.Text = "start sql service";
+            this.btn_start_service.Text = "start service";
             this.btn_start_service.UseVisualStyleBackColor = false;
             this.btn_start_service.Click += new System.EventHandler(this.start_sqlServer_Click);
             // 
@@ -180,10 +182,31 @@
             this.panel1.Size = new System.Drawing.Size(200, 208);
             this.panel1.TabIndex = 17;
             // 
+            // btn_stop_service
+            // 
+            this.btn_stop_service.BackColor = System.Drawing.Color.Gray;
+            this.btn_stop_service.Location = new System.Drawing.Point(34, 75);
+            this.btn_stop_service.Name = "btn_stop_service";
+            this.btn_stop_service.Size = new System.Drawing.Size(134, 23);
+            this.btn_stop_service.TabIndex = 19;
+            this.btn_stop_service.Text = "stop service";
+            this.btn_stop_service.UseVisualStyleBackColor = false;
+            this.btn_stop_service.Click += new System.EventHandler(this.btn_stop_service_Click);
+            // 
+            // pnl_service_status
+            // 
+            this.pnl_service_status.BackColor = System.Drawing.Color.Red;
+            this.pnl_service_status.Location = new System.Drawing.Point(174, 50);
+            this.pnl_service_status.Name = "pnl_service_status";
+            this.pnl_service_status.Size = new System.Drawing.Size(65, 48);
+            this.pnl_service_status.TabIndex = 20;
+            // 
             // Uc_postgreSql
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnl_service_status);
+            this.Controls.Add(this.btn_stop_service);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tb_server);
             this.Controls.Add(this.cbx_sql_string);
@@ -225,5 +248,7 @@
         private System.Windows.Forms.Label label5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_stop_service;
+        private System.Windows.Forms.Panel pnl_service_status;
     }
 }
