@@ -17,3 +17,6 @@ bld/
 
 # Visual Studio 2015 cache/options directory
 .vs/
+logfile
+/UserControl_postgreSql/server/data
+/UserControl_postgreSql/server/data_3

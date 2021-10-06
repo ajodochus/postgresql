@@ -23,6 +23,8 @@ namespace playground
 
         }
 
+        
+
         private void rgb_slider_Click(object sender, EventArgs e)
         {
             if (!panel.Controls.Contains(UserControl_rgb_slider.rgb_slider.Instance))
@@ -77,6 +79,9 @@ namespace playground
 
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

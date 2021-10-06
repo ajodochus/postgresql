@@ -1,0 +1,37 @@
+2021-10-05 15:32:09.041 CEST [7868] LOG:  PostgreSQL 13.4, compiled by Visual C++ build 1914, 64-bit startet
+2021-10-05 15:32:09.059 CEST [7868] LOG:  erwarte Verbindungen auf IPv6-Adresse »::1«, Port 5439
+2021-10-05 15:32:09.059 CEST [7868] LOG:  erwarte Verbindungen auf IPv4-Adresse »127.0.0.1«, Port 5439
+2021-10-05 15:32:09.177 CEST [8072] LOG:  Datenbanksystem wurde unterbrochen; letzte bekannte Aktion am 2021-10-05 15:23:57 CEST
+2021-10-05 15:32:09.914 CEST [8072] LOG:  Datenbanksystem wurde nicht richtig heruntergefahren; automatische Wiederherstellung läuft
+2021-10-05 15:32:09.918 CEST [8072] LOG:  Redo beginnt bei 0/15E9B88
+2021-10-05 15:32:09.918 CEST [8072] LOG:  ungültige Datensatzlänge bei 0/15E9BC0: 24 erwartet, 0 erhalten
+2021-10-05 15:32:09.918 CEST [8072] LOG:  Redo fertig bei 0/15E9B88
+2021-10-05 15:32:09.978 CEST [7868] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-05 15:33:04.138 CEST [7868] LOG:  schnelles Herunterfahren verlangt
+2021-10-05 15:33:04.140 CEST [7868] LOG:  etwaige aktive Transaktionen werden abgebrochen
+2021-10-05 15:33:04.160 CEST [9036] FATAL:  Verbindung wird abgebrochen aufgrund von Anweisung des Administrators
+2021-10-05 15:33:04.182 CEST [7868] LOG:  Background-Worker »logical replication launcher« (PID 6700) beendete mit Status 1
+2021-10-05 15:33:04.196 CEST [7948] LOG:  fahre herunter
+2021-10-05 15:33:04.264 CEST [7868] LOG:  Datenbanksystem ist heruntergefahren
+2021-10-05 15:35:36.231 CEST [8276] LOG:  PostgreSQL 13.4, compiled by Visual C++ build 1914, 64-bit startet
+2021-10-05 15:35:36.284 CEST [8276] LOG:  erwarte Verbindungen auf IPv6-Adresse »::1«, Port 5439
+2021-10-05 15:35:36.284 CEST [8276] LOG:  erwarte Verbindungen auf IPv4-Adresse »127.0.0.1«, Port 5439
+2021-10-05 15:35:36.424 CEST [6552] LOG:  Datenbanksystem wurde am 2021-10-05 15:33:04 CEST heruntergefahren
+2021-10-05 15:35:36.503 CEST [8276] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-05 15:41:52.772 CEST [8276] LOG:  schnelles Herunterfahren verlangt
+2021-10-05 15:41:52.775 CEST [8276] LOG:  etwaige aktive Transaktionen werden abgebrochen
+2021-10-05 15:41:52.807 CEST [8276] LOG:  Background-Worker »logical replication launcher« (PID 3812) beendete mit Status 1
+2021-10-05 15:41:52.835 CEST [3520] FATAL:  Verbindung wird abgebrochen aufgrund von Anweisung des Administrators
+2021-10-05 15:41:52.867 CEST [8672] LOG:  fahre herunter
+2021-10-05 15:41:53.056 CEST [8276] LOG:  Datenbanksystem ist heruntergefahren
+2021-10-05 15:44:03.022 CEST [8336] LOG:  PostgreSQL 13.4, compiled by Visual C++ build 1914, 64-bit startet
+2021-10-05 15:44:03.045 CEST [8336] LOG:  erwarte Verbindungen auf IPv6-Adresse »::1«, Port 5439
+2021-10-05 15:44:03.045 CEST [8336] LOG:  erwarte Verbindungen auf IPv4-Adresse »127.0.0.1«, Port 5439
+2021-10-05 15:44:03.192 CEST [8928] LOG:  Datenbanksystem wurde am 2021-10-05 15:41:52 CEST heruntergefahren
+2021-10-05 15:44:03.242 CEST [8336] LOG:  Datenbanksystem ist bereit, um Verbindungen anzunehmen
+2021-10-05 15:44:30.743 CEST [8336] LOG:  Checkpointer-Prozess (PID 724) wurde durch Ausnahme 0xC000013A beendet
+2021-10-05 15:44:30.743 CEST [8336] TIPP:  Sehen Sie die Beschreibung des Hexadezimalwerts in der C-Include-Datei »ntstatus.h« nach.
+2021-10-05 15:44:30.743 CEST [8336] LOG:  aktive Serverprozesse werden abgebrochen
+2021-10-05 15:44:30.748 CEST [2044] WARNUNG:  Verbindung wird abgebrochen wegen Absturz eines anderen Serverprozesses
+2021-10-05 15:44:30.748 CEST [2044] DETAIL:  Der Postmaster hat diesen Serverprozess angewiesen, die aktuelle Transaktion zurückzurollen und die Sitzung zu beenden, weil ein anderer Serverprozess abnormal beendet wurde und möglicherweise das Shared Memory verfälscht hat.
+2021-10-05 15:44:30.748 CEST [2044] TIPP:  In einem Moment sollten Sie wieder mit der Datenbank verbinden und Ihren Befehl wiederholen können.
