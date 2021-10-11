@@ -94,6 +94,10 @@
       <Project>{E3D01DB9-4A20-4230-B51E-1F5707E3C560}</Project>
       <Name>UserControl_rgb_slider</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UserControl_sql_input\UserControl_sql_input.csproj">
+      <Project>{E5A76F5E-D817-4EC4-86CA-0949ADBEF7A1}</Project>
+      <Name>UserControl_sql_input</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

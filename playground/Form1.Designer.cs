@@ -35,6 +35,7 @@
             this.ToolStripMenu_set_system_time = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_rgb_handler = new System.Windows.Forms.ToolStripMenuItem();
             this.sqlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ssssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +74,8 @@
             this.ToolStripMenu_Misc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenu_set_system_time,
             this.ToolStripMenu_rgb_handler,
-            this.sqlToolStripMenuItem});
+            this.sqlToolStripMenuItem,
+            this.ssssToolStripMenuItem});
             this.ToolStripMenu_Misc.Name = "ToolStripMenu_Misc";
             this.ToolStripMenu_Misc.Size = new System.Drawing.Size(50, 20);
             this.ToolStripMenu_Misc.Text = "Menu";
@@ -81,23 +83,30 @@
             // ToolStripMenu_set_system_time
             // 
             this.ToolStripMenu_set_system_time.Name = "ToolStripMenu_set_system_time";
-            this.ToolStripMenu_set_system_time.Size = new System.Drawing.Size(156, 22);
+            this.ToolStripMenu_set_system_time.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenu_set_system_time.Text = "set system time";
             this.ToolStripMenu_set_system_time.Click += new System.EventHandler(this.btn_system_datetime_Click);
             // 
             // ToolStripMenu_rgb_handler
             // 
             this.ToolStripMenu_rgb_handler.Name = "ToolStripMenu_rgb_handler";
-            this.ToolStripMenu_rgb_handler.Size = new System.Drawing.Size(156, 22);
+            this.ToolStripMenu_rgb_handler.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenu_rgb_handler.Text = "rgb handler";
             this.ToolStripMenu_rgb_handler.Click += new System.EventHandler(this.rgb_slider_Click);
             // 
             // sqlToolStripMenuItem
             // 
             this.sqlToolStripMenuItem.Name = "sqlToolStripMenuItem";
-            this.sqlToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.sqlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sqlToolStripMenuItem.Text = "sql";
             this.sqlToolStripMenuItem.Click += new System.EventHandler(this.sqlToolStripMenuItem_Click);
+            // 
+            // ssssToolStripMenuItem
+            // 
+            this.ssssToolStripMenuItem.Name = "ssssToolStripMenuItem";
+            this.ssssToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ssssToolStripMenuItem.Text = "ssss";
+            this.ssssToolStripMenuItem.Click += new System.EventHandler(this.ssssToolStripMenuItem_Click);
             // 
             // Playground
             // 
@@ -127,6 +136,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_set_system_time;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_rgb_handler;
         private System.Windows.Forms.ToolStripMenuItem sqlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ssssToolStripMenuItem;
     }
 }
 

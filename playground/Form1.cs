@@ -14,13 +14,14 @@ namespace playground
     {
         public Playground()
         {
+            
             InitializeComponent();
            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         
@@ -39,7 +40,7 @@ namespace playground
             }
         }
 
-
+  
 
         private void btn_system_datetime_Click(object sender, EventArgs e)
         {
@@ -69,6 +70,10 @@ namespace playground
             }
         }
 
+
+
+
+
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -81,6 +86,22 @@ namespace playground
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void ssssToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            if (!panel.Controls.Contains(UserControl_sql_input.Sql_input.Instance))
+            {
+                panel.Controls.Add(UserControl_sql_input.Sql_input.Instance);
+                UserControl_sql_input.Sql_input.Instance.Dock = DockStyle.Fill;
+                UserControl_sql_input.Sql_input.Instance.BringToFront();
+            }
+            else
+            {
+                UserControl_sql_input.Sql_input.Instance.BringToFront();
+            }
             
         }
     }

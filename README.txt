@@ -5,7 +5,7 @@
 
 
 1) in den Visual studio Optionen unter "Windows Forms-Designer / Allgemein / Toolbox" den Wert für "Toolbox automatisch auffüllen" auf true setzen, damit die UserControls nach einem Rebuild auch in der Toolbox erscheinen
-2) ein neues .net Klassenbibliothek DLL(!!!) Projekt anlegen
+2) ein neues .net Klassenbibliothek DLL(!!!) Projekt anlegen ACHTUNG: Zielframework muss identisch mit der aufrufenden Winform sein
 3) in diesem Projekt ein neues Benutzersteuerungselement hinzufügen (Projekt / Benutzersteuerelement hinzufügen)
 4) im usercode des Benutzersteuerelement ein Feld für die Instanz anlegen, z.B:
 
